@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malay Sengupta - Registration Services | Kolkata</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== Global Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        /* ===== Header ===== */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3498db;
+        }
+        .logo-text h1 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        .logo-text p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        
+        /* ===== Hero Section ===== */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero-content {
+            max-width: 800px;
+            color: white;
+        }
+        .hero-content h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .cta-button:hover {
+            background: #2980b9;
+        }
+        
+        /* ===== Services ===== */
+        .services {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .service-text {
+            padding: 20px;
+        }
+        .service-text h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .service-text ul {
+            list-style: none;
+            text-align: left;
+        }
+        .service-text ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .service-text ul li:before {
+            content: "•";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* ===== About ===== */
+        .about {
+            padding: 60px 20px;
+            background: #f0f0f0;
+            text-align: center;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            text-align: left;
+        }
+        .about-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #3498db;
+        }
+        .about-text p {
+            margin-bottom: 15px;
+        }
+        .highlight {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        /* ===== Contact ===== */
+        .contact {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .contact-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .contact-icon {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        .contact-card h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .contact-link {
+            color: #3498db;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* ===== WhatsApp Float ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        /* ===== Footer ===== */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            .logo {
+                margin-bottom: 15px;
+            }
+            nav ul {
+                margin-top: 15px;
+            }
+            nav ul li {
+                margin-left: 15px;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/917325949720" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="Malay.jpeg" alt="Mr. Malay Sengupta" class="logo-img">
+            <div class="logo-text">
+                <h1>Malay Sengupta</h1>
+                <p>Registration & Legal Services</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hassle-Free Registration Services</h1>
+            <p>30+ Years of Expertise in Property, Land, Society & Legal Registrations</p>
+            <a href="#contact" class="cta-button">Get Assistance Now</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="service-grid">
+            <!-- Property Registration -->
+            <div class="service-card">
+                <img src="https://img.staticmb.com/mbcontent/images/crop/uploads/2023/2/property-registration_0_1200.jpg" alt="Property Registration" class="service-img">
+                <div class="service-text">
+                    <h3>Property & Land Registration</h3>
+                    <ul>
+                        <li>Sale Deed, Gift Deed, Lease</li>
+                        <li>Partition, Mortgage</li>
+                        <li>Power of Attorney</li>
+                        <li>All Court-Related Matters</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Marriage Registration -->
+            <div class="service-card">
+                <img src="https://www.indiafilings.com/learn/wp-content/uploads/2020/09/843571-62952-lhovjvfyac-1499869552.jpg" alt="Marriage Registration" class="service-img">
+                <div class="service-text">
+                    <h3>Marriage & Society Registration</h3>
+                    <ul>
+                        <li>Hindu, Muslim, Christian Marriage</li>
+                        <li>Court Marriage</li>
+                        <li>Society, Trust, NGO Formation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Legal Services -->
+            <div class="service-card">
+                <img src="https://probono-india.in/Indian-Society/Blog/191_valentine-cover.png" alt="Legal Services" class="service-img">
+                <div class="service-text">
+                    <h3>Vehicle & Legal Registrations</h3>
+                    <ul>
+                        <li>New Vehicle Registration</li>
+                        <li>Ownership Transfer</li>
+                        <li>Loan Hypothecation Removal</li>
+                        <li>Other Legal Documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+            <img src="Malay.jpeg" alt="Mr. Malay Sengupta" class="about-img">
+            <div class="about-text">
+                <p>With <span class="highlight">over 30 years of experience</span>, <span class="highlight">Mr. Malay Sengupta</span> and his expert team provide seamless registration services at <span class="highlight">Alipore Police Court & Judge Court, Kolkata</span>.</p>
+                <p>We specialize in making complex legal processes <span class="highlight">simple, transparent, and stress-free</span> for our clients.</p>
+                <p>Our commitment to ethical practices and attention to detail has made us the preferred choice for hundreds of clients in Kolkata.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Our Location</h3>
+                <p>Alipore Police Court & Judge Court</p>
+                <p>Kolkata, West Bengal</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>Call / WhatsApp</h3>
+                <a href="tel:+917325949720" class="contact-link">+91 7325949720</a>
+                <p>Mon-Sat: 10AM - 7PM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Malay Sengupta Registration Services. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        // Image Fallback (if images don't load)
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.onerror = function() {
+                    this.src = 'https://via.placeholder.com/300x200?text=Image+Not+Found';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
